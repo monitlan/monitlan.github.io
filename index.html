@@ -3,45 +3,74 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MONITLAN – Kompleksowa obsługa firm • Monitoring • Sieci komputerowe</title>
-  <meta name="description" content="MONITLAN – kompleksowa obsługa firm, montaż monitoringu i kamery IP, sieci komputerowe, konfiguracje i serwis IT." />
+  <title>MONITLAN – kompleksowa obsługa firm • monitoring • sieci komputerowe</title>
+  <meta name="description" content="MONITLAN – kompleksowa obsługa firm, montaż monitoringu (kamery IP), sieci komputerowe LAN/Wi-Fi, serwis IT. Tel: 698 621 677." />
+  <meta name="theme-color" content="#0b1220" />
   <style>
     :root{
-      --bg:#0b1220;
-      --card:rgba(255,255,255,.08);
-      --line:rgba(255,255,255,.14);
+      --bg:#070c16;
+      --panel:rgba(255,255,255,.07);
+      --panel2:rgba(255,255,255,.05);
+      --line:rgba(255,255,255,.12);
       --txt:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.68);
-      --accent:#6ee7ff;
-      --accent2:#a78bfa;
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --muted:rgba(255,255,255,.70);
+      --muted2:rgba(255,255,255,.58);
+      --a:#6ee7ff;
+      --b:#a78bfa;
+      --shadow:0 18px 60px rgba(0,0,0,.50);
+      --radius:22px;
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--txt);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:
-        radial-gradient(900px 450px at 15% 10%, rgba(110,231,255,.18), transparent 60%),
-        radial-gradient(900px 450px at 85% 15%, rgba(167,139,250,.16), transparent 55%),
-        radial-gradient(900px 600px at 50% 95%, rgba(110,231,255,.10), transparent 60%),
+        radial-gradient(900px 450px at 12% 10%, rgba(110,231,255,.18), transparent 60%),
+        radial-gradient(900px 450px at 88% 14%, rgba(167,139,250,.16), transparent 55%),
+        radial-gradient(1000px 700px at 50% 105%, rgba(110,231,255,.10), transparent 60%),
         var(--bg);
     }
     a{color:inherit;text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:1100px;margin:0 auto;padding:26px 16px 70px}
-    header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{
-      width:44px;height:44px;border-radius:14px;
-      background:linear-gradient(135deg, rgba(110,231,255,.95), rgba(167,139,250,.9));
-      box-shadow:0 10px 30px rgba(110,231,255,.18);
-      position:relative;overflow:hidden;
+    .wrap{max-width:1120px;margin:0 auto;padding:22px 16px 70px}
+
+    /* Top bar */
+    .top{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(7,12,22,.78), rgba(7,12,22,.46));
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
-    .logo:after{content:"";position:absolute;inset:-40%;background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.65), transparent 55%);transform:rotate(25deg)}
-    h1{margin:0;font-size:18px;letter-spacing:.08em}
-    .tag{margin-top:2px;font-size:12.5px;color:var(--muted)}
-    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .top-in{
+      max-width:1120px;margin:0 auto;padding:12px 16px;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:220px}
+    .logo{
+      width:42px;height:42px;border-radius:14px;
+      background:linear-gradient(135deg, rgba(110,231,255,.95), rgba(167,139,250,.92));
+      box-shadow:0 10px 30px rgba(110,231,255,.18);
+      position:relative; overflow:hidden;
+    }
+    .logo:after{
+      content:"";position:absolute;inset:-40%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.70), transparent 55%);
+      transform: rotate(25deg);
+    }
+    .brand h1{margin:0;font-size:16.5px;letter-spacing:.10em}
+    .brand .tag{margin-top:2px;font-size:12.2px;color:var(--muted2)}
+    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .navlink{
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      color:rgba(255,255,255,.78);
+      font-size:12.8px;
+    }
+    .navlink:hover{border-color:rgba(255,255,255,.20);background:rgba(255,255,255,.06);text-decoration:none}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
     .btn{
       display:inline-flex;align-items:center;gap:10px;
       padding:10px 12px;border-radius:12px;
@@ -52,89 +81,171 @@
       font-size:13.5px;white-space:nowrap;text-decoration:none!important;
     }
     .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.22)}
-    .btn.primary{border-color:rgba(110,231,255,.35);background:linear-gradient(135deg, rgba(110,231,255,.18), rgba(167,139,250,.16))}
-    .dot{width:10px;height:10px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(110,231,255,.14)}
-    .hero{
-      margin-top:18px;border:1px solid var(--line);border-radius:22px;
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
-      box-shadow:var(--shadow);overflow:hidden;
-      display:grid;grid-template-columns: 1.2fr .8fr;
-      min-height: 340px;
+    .btn.primary{
+      border-color:rgba(110,231,255,.35);
+      background:linear-gradient(135deg, rgba(110,231,255,.18), rgba(167,139,250,.16));
     }
-    .hero-left{padding:26px 22px;position:relative}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--a);box-shadow:0 0 0 4px rgba(110,231,255,.14)}
+
+    /* Hero */
+    .hero{
+      margin-top:18px;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      background:
+        radial-gradient(900px 500px at 10% 5%, rgba(110,231,255,.18), transparent 58%),
+        radial-gradient(900px 500px at 90% 0%, rgba(167,139,250,.16), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:0;
+      min-height: 380px;
+    }
+    .hero-left{padding:28px 22px}
     .kicker{
       display:inline-flex;gap:8px;align-items:center;
-      font-size:12.5px;color:var(--muted);
-      border:1px solid var(--line);border-radius:999px;
-      padding:6px 10px;background:rgba(255,255,255,.05);
-      width:fit-content;margin-bottom:12px;
+      font-size:12.5px;color:rgba(255,255,255,.72);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:999px;
+      padding:6px 10px;
+      background:rgba(255,255,255,.05);
+      width:fit-content;
+      margin-bottom:12px;
     }
-    .headline{margin:0 0 10px;font-size:clamp(28px, 4vw, 46px);line-height:1.05}
-    .sub{margin:0 0 16px;color:var(--muted);font-size:15.5px;line-height:1.6;max-width:62ch}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .chip{border:1px solid var(--line);background:rgba(255,255,255,.05);padding:7px 10px;border-radius:999px;font-size:12.5px;color:rgba(255,255,255,.78)}
+    .headline{
+      margin:0 0 10px;
+      font-size:clamp(30px, 4.4vw, 52px);
+      letter-spacing:.01em;
+      line-height:1.04;
+    }
+    .sub{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:15.7px;
+      line-height:1.65;
+      max-width:65ch;
+    }
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 6px}
+    .chip{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+      padding:7px 10px;border-radius:999px;
+      font-size:12.6px;color:rgba(255,255,255,.78);
+    }
     .hero-right{
-      position:relative;
+      border-left:1px solid rgba(255,255,255,.10);
       background:
-        linear-gradient(120deg, rgba(110,231,255,.18), rgba(167,139,250,.12)),
+        linear-gradient(120deg, rgba(110,231,255,.14), rgba(167,139,250,.10)),
         url("assets/hero.jpg");
       background-size: cover;
       background-position:center;
-      border-left:1px solid rgba(255,255,255,.10);
+      position:relative;
+      min-height: 260px;
     }
     .badge{
-      position:absolute;left:14px;bottom:14px;
-      border:1px solid rgba(255,255,255,.18);
+      position:absolute;left:14px;bottom:14px;right:14px;
+      border:1px solid rgba(255,255,255,.16);
       background:rgba(0,0,0,.35);
-      padding:10px 12px;border-radius:14px;
-      backdrop-filter: blur(6px);
-      font-size:13px;color:rgba(255,255,255,.85);
+      padding:10px 12px;border-radius:16px;
+      backdrop-filter: blur(8px);
+      font-size:13px;color:rgba(255,255,255,.88);
+      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
     }
+    .badge span{color:rgba(255,255,255,.72)}
+    .hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 
+    /* Sections */
     section{margin-top:18px}
-    .grid{
-      display:grid;grid-template-columns: repeat(3, 1fr);
-      gap:12px;
+    .section-title{
+      display:flex;justify-content:space-between;align-items:flex-end;
+      gap:10px;flex-wrap:wrap;margin:0 0 10px;
     }
+    .section-title h2{margin:0;font-size:18px;letter-spacing:.02em}
+    .section-title p{margin:0;color:var(--muted2);font-size:13.5px}
+
+    .grid{display:grid;grid-template-columns: repeat(3, 1fr);gap:12px}
     .card{
-      border:1px solid var(--line);
+      border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.055);
       border-radius:18px;
       padding:14px;
     }
-    .card h3{margin:0 0 6px;font-size:14.5px}
-    .card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.5}
+    .card h3{margin:0 0 6px;font-size:14.7px}
+    .card p{margin:0;color:var(--muted);font-size:13.7px;line-height:1.55}
     .icon{
-      width:38px;height:38px;border-radius:14px;margin-bottom:10px;
+      width:40px;height:40px;border-radius:14px;margin-bottom:10px;
       display:flex;align-items:center;justify-content:center;
       background:rgba(255,255,255,.07);
       border:1px solid rgba(255,255,255,.14);
       font-size:18px;
     }
 
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .steps .step{
+      display:flex;gap:12px;align-items:flex-start;
+      padding:12px 0;border-top:1px dashed rgba(255,255,255,.14);
+    }
+    .steps .step:first-child{border-top:none;padding-top:0}
+    .num{
+      width:34px;height:34px;border-radius:14px;
+      display:flex;align-items:center;justify-content:center;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.14);
+      font-weight:700;
+    }
+    .step b{display:block;margin-bottom:4px}
+    .muted{color:var(--muted)}
+    .muted2{color:var(--muted2)}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns: repeat(4, 1fr);gap:10px}
+    .img{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      overflow:hidden;
+      aspect-ratio: 4 / 3;
+    }
+    .img img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* CTA */
     .cta{
-      border:1px solid var(--line);
+      border:1px solid rgba(255,255,255,.14);
       background:linear-gradient(135deg, rgba(110,231,255,.15), rgba(167,139,250,.12));
-      border-radius:22px;
+      border-radius:var(--radius);
       padding:18px;
       display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
       box-shadow: var(--shadow);
     }
     .cta h2{margin:0;font-size:18px}
-    .cta .muted{color:var(--muted);margin-top:4px;font-size:13.5px}
+    .cta p{margin:4px 0 0;color:var(--muted2);font-size:13.5px}
 
     footer{margin-top:20px;text-align:center;color:rgba(255,255,255,.58);font-size:12.5px}
 
-    @media (max-width: 980px){
-      .hero{grid-template-columns: 1fr}
-      .hero-right{min-height:220px;border-left:none;border-top:1px solid rgba(255,255,255,.10)}
+    @media (max-width: 1020px){
+      .hero-grid{grid-template-columns: 1fr}
+      .hero-right{border-left:none;border-top:1px solid rgba(255,255,255,.10)}
       .grid{grid-template-columns: 1fr}
+      .two{grid-template-columns: 1fr}
+      .gallery{grid-template-columns: repeat(2, 1fr)}
+      nav{justify-content:flex-start}
+      .actions{justify-content:flex-start}
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
+
+  <div class="top">
+    <div class="top-in">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
         <div>
@@ -143,84 +254,215 @@
         </div>
       </div>
 
+      <nav>
+        <a class="navlink" href="#uslugi">Usługi</a>
+        <a class="navlink" href="#jak">Jak pracuję</a>
+        <a class="navlink" href="#dlaczego">Dlaczego warto</a>
+        <a class="navlink" href="#galeria">Galeria</a>
+        <a class="navlink" href="#kontakt">Kontakt</a>
+      </nav>
+
       <div class="actions">
-        <a class="btn primary" href="tel:+48698621677"><span class="dot"></span> Zadzwoń: 698 621 677</a>
+        <a class="btn primary" href="tel:+48698621677"><span class="dot"></span> 698 621 677</a>
         <a class="btn" href="mailto:andrzej@monitlan.pl">✉️ andrzej@monitlan.pl</a>
       </div>
-    </header>
+    </div>
+  </div>
 
-    <div class="hero">
-      <div class="hero-left">
-        <div class="kicker"><span class="dot" aria-hidden="true"></span> MONITLAN – usługi IT dla firm</div>
+  <div class="wrap">
 
-        <h2 class="headline">Kompleksowa obsługa firm, monitoring i sieci komputerowe</h2>
+    <div class="hero" id="start">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span> Usługi IT dla firm i domu</div>
 
-        <p class="sub">
-          Zajmuję się <b>kompleksową obsługą firm</b> w zakresie IT – od instalacji i konfiguracji,
-          przez utrzymanie, aż po szybkie wsparcie w razie awarii.
-          Wykonuję również <b>montaż monitoringu</b> (kamery IP / rejestratory) oraz
-          <b>sieci komputerowe</b> (LAN / Wi-Fi / konfiguracja urządzeń).
-        </p>
+          <h2 class="headline">Kompleksowa obsługa firm, montaż monitoringu i sieci komputerowe</h2>
 
-        <div class="chips">
-          <div class="chip">Monitoring / kamery IP</div>
-          <div class="chip">Sieci LAN / Wi-Fi</div>
-          <div class="chip">Switche / konfiguracja</div>
-          <div class="chip">Serwis i wsparcie IT</div>
-          <div class="chip">Microsoft 365 / poczta</div>
+          <p class="sub">
+            Zajmuję się <b>kompleksową obsługą firm</b> w zakresie IT – instalacje, konfiguracje i utrzymanie.
+            Wykonuję <b>montaż monitoringu</b> (kamery IP / rejestratory / podgląd z telefonu) oraz
+            <b>sieci komputerowe</b> (LAN / Wi-Fi / konfiguracja urządzeń).
+          </p>
+
+          <div class="chips">
+            <div class="chip">Kamery IP / NVR</div>
+            <div class="chip">LAN / Wi-Fi</div>
+            <div class="chip">Switche / routery</div>
+            <div class="chip">Serwis IT</div>
+            <div class="chip">Microsoft 365</div>
+          </div>
+
+          <div class="hero-cta">
+            <a class="btn primary" href="#kontakt"><span class="dot"></span> Skontaktuj się</a>
+            <a class="btn" href="#uslugi">Zobacz usługi</a>
+          </div>
         </div>
-      </div>
 
-      <div class="hero-right" role="img" aria-label="Tło – infrastruktura IT">
-        <div class="badge">📍 Szybki kontakt • Dojazd • Montaż i konfiguracja</div>
+        <div class="hero-right" role="img" aria-label="Tło – infrastruktura IT">
+          <div class="badge">
+            <div><b>Szybka realizacja</b> <span>• dojazd • montaż • konfiguracja</span></div>
+            <div><span>tel.</span> <b>698 621 677</b></div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <section>
+    <section id="uslugi">
+      <div class="section-title">
+        <h2>Usługi</h2>
+        <p>Najczęściej realizowane tematy</p>
+      </div>
+
       <div class="grid">
         <div class="card">
           <div class="icon">🏢</div>
           <h3>Kompleksowa obsługa firm</h3>
-          <p>Stała opieka IT, konfiguracje, porządek w sprzęcie i kontach, szybka pomoc w awariach.</p>
+          <p>Stała opieka IT, konfiguracje, utrzymanie, szybka reakcja na awarie, porządek w sprzęcie i kontach.</p>
         </div>
 
         <div class="card">
           <div class="icon">📷</div>
           <h3>Montaż monitoringu</h3>
-          <p>Kamery IP, rejestrator NVR, podgląd w telefonie, dostęp zdalny, archiwizacja nagrań.</p>
+          <p>Kamery IP, rejestrator NVR, podgląd na telefonie, dostęp zdalny, archiwizacja, optymalne ustawienie.</p>
         </div>
 
         <div class="card">
           <div class="icon">🌐</div>
-          <h3>Sieci komputerowe</h3>
-          <p>LAN i Wi-Fi, konfiguracja switchy i routerów, stabilna sieć w biurze i domu.</p>
+          <h3>Sieci komputerowe LAN/Wi-Fi</h3>
+          <p>Okablowanie, konfiguracja Wi-Fi, switche, routery, segmentacja sieci, stabilne połączenie w firmie.</p>
         </div>
 
         <div class="card">
           <div class="icon">🧰</div>
-          <h3>Serwis i konfiguracje</h3>
-          <p>Komputery, laptopy, aktualizacje, backup, przygotowanie stanowisk pracy.</p>
+          <h3>Serwis IT</h3>
+          <p>Komputery i laptopy, instalacje, aktualizacje, przygotowanie stanowisk, kopie zapasowe.</p>
         </div>
 
         <div class="card">
           <div class="icon">🛡️</div>
-          <h3>Bezpieczeństwo</h3>
-          <p>Podstawowe zabezpieczenia, kopie zapasowe, ochrona kont i urządzeń.</p>
+          <h3>Bezpieczeństwo i backup</h3>
+          <p>Podstawowe zabezpieczenia, kopie danych, porządek w uprawnieniach, ochrona kont.</p>
         </div>
 
         <div class="card">
           <div class="icon">📧</div>
-          <h3>Poczta firmowa / Microsoft 365</h3>
-          <p>Konfiguracja domeny, Outlook, SPF/DKIM/DMARC i porządek w DNS.</p>
+          <h3>Microsoft 365 / poczta firmowa</h3>
+          <p>Konfiguracja domeny, Outlook, SPF/DKIM/DMARC, migracje i porządkowanie DNS.</p>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="jak">
+      <div class="section-title">
+        <h2>Jak pracuję</h2>
+        <p>Prosto i przewidywalnie</p>
+      </div>
+
+      <div class="two">
+        <div class="card steps">
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <b>Kontakt i krótka rozmowa</b>
+              <div class="muted">Ustalamy co trzeba zrobić i jaki jest cel (monitoring / sieć / IT).</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <b>Wycena i plan działania</b>
+              <div class="muted">Dobór sprzętu, zakres prac, termin. Bez niespodzianek w trakcie.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <b>Montaż / konfiguracja / testy</b>
+              <div class="muted">Uruchomienie, testy, pokaz obsługi (np. podgląd kamer w telefonie).</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <div>
+              <b>Wsparcie po wdrożeniu</b>
+              <div class="muted">Jeśli coś się dzieje – reaguję i pomagam utrzymać porządek.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 8px;">Co dostajesz na koniec</h3>
+          <p class="muted" style="margin:0 0 10px;">
+            Żeby wszystko było czytelne, po realizacji masz:
+          </p>
+          <ul style="margin:0;padding-left:18px;color:rgba(255,255,255,.78);line-height:1.75">
+            <li>działający monitoring / sieć / konfigurację IT</li>
+            <li>dostęp zdalny (jeśli dotyczy) + instrukcję “co i gdzie kliknąć”</li>
+            <li>podstawową dokumentację (hasła / adresy / schemat) – jeśli chcesz</li>
+            <li>możliwość dalszej obsługi firmowej</li>
+          </ul>
+          <p class="muted2" style="margin:10px 0 0;font-size:12.8px;">
+            (To wszystko możesz dopasować pod swoje realne zasady pracy.)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="dlaczego">
+      <div class="section-title">
+        <h2>Dlaczego warto</h2>
+        <p>Konkretnie, bez lania wody</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="icon">⚡</div>
+          <h3>Szybka reakcja</h3>
+          <p>Nie przeciągam tematów – ustalamy plan i dowozimy rezultat.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧩</div>
+          <h3>Całościowe podejście</h3>
+          <p>Obsługa firm od A do Z: monitoring, sieci, stanowiska, poczta, podstawowe zabezpieczenia.</p>
+        </div>
+        <div class="card">
+          <div class="icon">✅</div>
+          <h3>Jasne ustalenia</h3>
+          <p>Zakres i cena bez niespodzianek. Po wdrożeniu wiesz, jak z tego korzystać.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="section-title">
+        <h2>Galeria (opcjonalnie)</h2>
+        <p>Wgraj własne zdjęcia realizacji</p>
+      </div>
+
+      <div class="card">
+        <p class="muted" style="margin:0 0 12px;font-size:13.5px;">
+          Utwórz folder <b>assets</b> i dodaj pliki:
+          <b>hero.jpg</b>, <b>camera.jpg</b>, <b>network.jpg</b>, <b>rack.jpg</b>.
+        </p>
+
+        <div class="gallery">
+          <div class="img"><img src="assets/camera.jpg" alt="Monitoring / kamery IP"></div>
+          <div class="img"><img src="assets/network.jpg" alt="Sieci komputerowe"></div>
+          <div class="img"><img src="assets/rack.jpg" alt="Szafa rack / okablowanie"></div>
+          <div class="img"><img src="assets/laptop.jpg" alt="Serwis IT"></div>
+        </div>
+
+        <p class="muted2" style="margin:12px 0 0;font-size:12.8px;">
+          Jeśli nie dodasz obrazków, zobaczysz puste miejsca — to normalne. Wystarczy wgrać zdjęcia i odświeżyć stronę.
+        </p>
+      </div>
+    </section>
+
+    <section id="kontakt">
       <div class="cta">
         <div>
-          <h2>Chcesz szybką wycenę lub pomoc?</h2>
-          <div class="muted">Zadzwoń lub napisz – oddzwonię i ustalimy szczegóły.</div>
+          <h2>Kontakt</h2>
+          <p>Najprościej: zadzwoń lub wyślij maila.</p>
         </div>
         <div class="actions">
           <a class="btn primary" href="tel:+48698621677"><span class="dot"></span> 698 621 677</a>
